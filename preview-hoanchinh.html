@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 1em;
+        }
+    </style>
+    <style>
+        .char-container {
+            position: relative;
+            width: 86px;
+            height: 86px;
+            /* background-color: yellow; */
+        }
+
+        .char-container > div {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 30px;
+            width: 49px;
+        }
+
+        .phuamdau {
+            top: 0 !important;
+            left: 0 !important;
+            width: 36px !important;
+            height: 86px;
+            justify-content: right!important;
+        }
+
+
+        .phuamdau img {
+            margin-right: 2px;
+        }
+
+        .dauthanh {
+            height: 23px;
+        }
+
+        .van11 {
+            height: 85px;
+        }
+
+        .van34 {
+            top: 23px;
+            height: 63px;
+        }
+
+        .van12 {
+            height: 42px;
+        }
+
+        .van38 {
+            top: 21px;
+            height: 32px;
+        }
+
+        .phuamcuoi12 {
+            top: 42px;
+            height: 42px;
+        }
+
+        .phuamcuoi38 {
+            top: 54px;
+            height: 31px;
+        }
+
+        #preview {
+            display: flex;
+            flex-wrap: wrap;
+            /* margin-left: 60px; */
+        }
+
+        #preview .char-container {
+            scale: 0.8;
+            margin-left: -6px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>Chữ</h1>
+    <table style="border: 1px solid;" id="sampleTbl">
+        <tr>
+            <th>#</th>
+            <th>Chữ</th>
+            <th>Preview</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>a</td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_-.svg">
+                    </div>
+                    <div class="van11"><img src="./van/11_a.svg" alt=""> </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>cha</td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_ch.svg">
+                    </div>
+                    <div class="van11"> <img src="./van/11_a.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>chác</td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_ch.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_a.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_c.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>cà</td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_c.svg">
+                    </div>
+                    <div class="dauthanh"> <img src="./dauthanh/11_huyen.svg" alt=""></div>
+                    <div class="van34"> <img src="./van/34_a.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>mạc</td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_m.svg">
+                    </div>
+                    <div class="dauthanh"><img src="./dauthanh/11_nang.svg" alt=""></div>
+                    <div class="van38"><img src="./van/38_a.svg" alt=""></div>
+                    <div class="phuamcuoi38"><img src="./phuamcuoi/38_c.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <p id="preview">
+
+    </p>
+
+    <img src="./generated/svg/c_a__.svg" width="86px" >
+
+    <script>
+        const dauthanh = {
+            "f": "huyen",
+            "s": "sac",
+            "r": "hoi",
+            "x": "nga",
+            "j": "nang"
+        };
+
+        [
+            "th_aa_ng_f", 
+            "x_aa_c_f", 
+            "nh_aa_ch_f", 
+            "h_aa_p_f", 
+            "n_aa_t_f", 
+            "m_aa_m_f", 
+            "s_aa_n_f", 
+            "t_aw_ng_r", 
+            "p_a_nh_r", 
+            "th_a_nh_", 
+            "_ay__j",
+            "ng_i_ng_f",
+            "th_iee_n_s",
+            "ng_i_ng_x",
+            "_iee_n_x",
+            "ng_e___",
+            "ng_ow___",
+            "m_e__x",
+            "qu_ee__",
+            "l_ee__f",
+            "th_ee_m_f",
+            "b_e_n_j",
+            "b_e_n_",
+            "b_ee_n_",
+            "b_ow__f",
+            "b_ow_n",
+            "b_ow_n_f",
+            "h_uw_n_r",
+            "th_o_n_f",
+            "g_a_n_f",
+            "_uyee_n_",
+            "_uyee_n_f",
+            "_uwa__f",
+            "t_iee_n",
+            "t_iee_n_f",
+            "h_aa_ng_",
+            "t_aa_ch_",
+            "t_aa_ng_",
+            "x_iee_c_",
+            "h_aau__",
+            'th_uw__f',
+            "th_o__f",
+            "t_ieeu__r",
+            "h_uee__f",
+            "t_uee__f",
+            "s_uee__",
+            "kh_uya__",
+            "m_uya__f",
+            "l_oai__f",
+            "h_ua__",
+            "h_ua__s",
+            "s_aa_m_",
+            "s_e_m_j",
+            "s_ee_m_j",
+            "s_aa_n_"
+        ].forEach(wordStr => {
+
+            const chars = wordStr.split("_");
+            const word = {
+                pd: chars[0],
+                d: dauthanh[chars[3]],
+                van: chars[1],
+                pc: chars[2]
+            }
+            // const word = {
+            //     pd: 'th',
+            //     d: 'sac',
+            //     van: 'aa',
+            //     pc: 'ng'
+            // }
+            word.pd = word.pd || '-';
+            let wordType = 0;
+            if (word.pc) {
+                if (word.d) {
+                    wordType = 3;
+                } else {
+                    wordType = 1;
+                }
+            } else {
+                if (word.d) {
+                    wordType = 2;
+                } else {
+                    wordType = 0;
+                }
+            }
+
+            const sampleTbl = document.getElementById("sampleTbl");
+            const template = sampleTbl.children[0].children[wordType + 2].children[2].children[0].cloneNode(true);
+
+            template.querySelector(".phuamdau").children[0].src = `./phuamdau/11_${word.pd}.svg`;
+            if (wordType == 0) {
+                template.querySelector(".van11").children[0].src = `./van/11_${word.van}.svg`;
+            } else if (wordType == 1) {
+                template.querySelector(".van12").children[0].src = `./van/12_${word.van}.svg`;
+                template.querySelector(".phuamcuoi12").children[0].src = `./phuamcuoi/12_${word.pc}.svg`;
+            } else if (wordType == 2) {
+                template.querySelector(".dauthanh").children[0].src = `./dauthanh/11_${word.d}.svg`;
+                template.querySelector(".van34").children[0].src = `./van/34_${word.van}.svg`;
+
+            } else if (wordType == 3) {
+                template.querySelector(".dauthanh").children[0].src = `./dauthanh/11_${word.d}.svg`;
+                template.querySelector(".van38").children[0].src = `./van/38_${word.van}.svg`;
+                template.querySelector(".phuamcuoi38").children[0].src = `./phuamcuoi/38_${word.pc}.svg`;
+
+            }
+
+            // console.log(template);
+            document.getElementById("preview").appendChild(template);
+
+        })
+    </script>
+</body>
+
+</html>
