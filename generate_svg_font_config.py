@@ -147,11 +147,11 @@ demo_words = []
 for i, word in enumerate(words):
     char_code = START_UNICODE + i
     
-    chars = word.split("_")
-    ready = chars[0] in ["dd"] and chars[1] in ["uooi", "ua"] and chars[3] in ["j", "", "f"]
-    if not ready:
-        continue
-    demo_words.append(word + " : "+ f"&#{char_code};")
+    # chars = word.split("_")
+    # ready = chars[0] in ["dd"] and chars[1] in ["uooi", "ua"] and chars[3] in ["j", "", "f"]
+    # if not ready:
+    #     continue
+    # demo_words.append(word + " : "+ f"&#{char_code};")
 
     
     try:
