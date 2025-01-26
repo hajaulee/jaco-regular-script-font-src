@@ -146,7 +146,12 @@ def genrate_svg(word):
         "11_uwi": -2,
         "11_i": -6,
         "11_iu": -4,
-        "11_oai": -3
+        "11_oai": -3,
+        "11_uwa": -3,
+        "34_uwa": -4,
+        "11_uwowu": 2,
+        "34_uwowi": 3,
+        "34_ooi": -1
     }.get(va[4:-4], 0)
     va_paths = translate_paths(
         va_svg["paths"],

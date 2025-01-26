@@ -148,14 +148,14 @@ for i, word in enumerate(words):
     char_code = START_UNICODE + i
     
     chars = word.split("_")
-    ready = chars[0] in ["ng", "m"] and chars[3] in ["", "x", "f"]
+    ready = chars[0] in ["dd"] and chars[1]and chars[2] and chars[3] in ["j"]
     if not ready:
         continue
     # if chars[0] == "ch" and chars[2] in ["", "m"] and  chars[3] in ["", "j"]:
     #     print(word, ":", f"&#{char_code};")
     
-    if chars[0] == "ng" and chars[2] in ["", "n"] and  chars[3] in ["", "f", "x"]:
-        demo_words.append(word + " : "+ f"&#{char_code};" + f"&#{code_map[word.replace('ng_', 'm_')]};体日本語")
+    if True:
+        demo_words.append(word + " : "+ f"&#{char_code};")
     
     try:
         paths = scale_paths(genrate_svg(word=word), scale, scale)
