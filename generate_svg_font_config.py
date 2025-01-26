@@ -148,7 +148,7 @@ for i, word in enumerate(words):
     char_code = START_UNICODE + i
     
     chars = word.split("_")
-    ready = chars[0] in ["dd"] and chars[1]and chars[2] and chars[3] in ["j"]
+    ready = chars[0] in ["dd"] and chars[1] and chars[3] in ["j"]
     if not ready:
         continue
     # if chars[0] == "ch" and chars[2] in ["", "m"] and  chars[3] in ["", "j"]:
