@@ -153,24 +153,45 @@ def genrate_svg(word):
         "34_uwowi": 3,
         "34_ooi": -1
     }.get(va[4:-4], 0)
+    va_pad_y = {
+        "38_aw": 4
+    }.get(va[4:-4], 0)
     va_paths = translate_paths(
         va_svg["paths"],
         va_svg["attrs"],
         dx=-va_svg["view_box"][0] + VA_LEFT + (VA_WIDTH - va_svg["view_box"][2]) / 2 + va_pad_x,
         dy=-va_svg["view_box"][1]
         + VP_ALIGN[kind]["va"]["y"]
-        + max(0, (VP_ALIGN[kind]["va"]["h"] - va_svg["view_box"][3]) / 2),
+        + max(0, (VP_ALIGN[kind]["va"]["h"] - va_svg["view_box"][3]) / 2)
+        + va_pad_y,
     )
 
     # Align center, bottom
+    # Pad by van
+    pc_pad_x_t = {
+        "12_ee": -4,
+        "12_iee": -2,
+        "12_o": -3,
+        "12_oa": -1,
+        "12_u": -5,
+        "38_u": -3,
+        "12_uw": -2,
+        "38_uw": -2,
+        "12_uwow": -3,
+        "12_uy": -4,
+        "12_uyee": -3
+    }.get(va[4:-4], 0)
     pc_pad_x = {
-        "phuamcuoi/12_p.svg": 5,
-        "phuamcuoi/12_c.svg": 2,
-        "phuamcuoi/12_nh.svg": 6,
-        "phuamcuoi/38_p.svg": 6,
-        "phuamcuoi/38_ch.svg": 2,
-        "phuamcuoi/38_nh.svg": 8,
-    }.get(pc, 0)
+        "12_p": 5,
+        "12_c": 2,
+        "12_nh": 6,
+        "38_p": 6,
+        "38_ch": 2,
+        "38_nh": 8,
+        "12_t": pc_pad_x_t,
+        "38_t": pc_pad_x_t
+    }.get(pc[10:-4], 0)
+    
     pc_paths = translate_paths(
         pc_svg["paths"],
         pc_svg["attrs"],
