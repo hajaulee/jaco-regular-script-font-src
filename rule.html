@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Jaco</title>
+
+    <style>
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .title {
+            width: 100%;
+            color: gray;
+            padding: 0.2em;
+        }
+
+        .char-cell {
+            font-size: 32px;
+            width: 40px;
+            text-align: center;
+            background-color: #fafaff;
+            /* text-transform: uppercase; */
+        }
+        .img-cell {
+            width: 40px;
+            height: 40px;
+            /* border: 1px black solid; */
+            text-align: center;
+        }
+
+        .img-cell > img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        table, tr, td {
+            border-collapse: collapse;
+            /* border: 0.5px solid #eaeaea; */
+        }
+
+        table {
+            border: 1px solid #59b4b4;
+        }
+
+        tr td:nth-child(2n + 1){
+            border-left: 1px solid #41b8b8;
+        }
+
+        tr td {
+            border-bottom: 1px solid #59b4b4;
+        }
+
+        .char-container {
+            position: relative;
+            width: 86px;
+            height: 86px;
+            /* background-color: yellow; */
+        }
+
+        .char-container > div {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 36px;
+            width: 49px;
+        }
+
+        .phuamdau {
+            top: 0 !important;
+            left: 0 !important;
+            width: 36px !important;
+            height: 86px;
+            justify-content: right!important;
+        }
+
+
+        .phuamdau img {
+            margin-right: 2px;
+        }
+
+        .dauthanh {
+            height: 23px;
+        }
+
+        .van11 {
+            height: 85px;
+        }
+
+        .van34 {
+            top: 23px;
+            height: 63px;
+        }
+
+        .van12 {
+            height: 42px;
+        }
+
+        .van38 {
+            top: 21px;
+            height: 32px;
+        }
+
+        .phuamcuoi12 {
+            top: 42px;
+            height: 42px;
+        }
+
+        .phuamcuoi38 {
+            top: 54px;
+            height: 31px;
+        }
+
+        .sample {
+            width: 765px;
+            max-width: 100%;
+        }
+
+        .sample td,th {
+            border: 1px solid #41b8b8;
+            padding: 5px;
+        }
+
+        .sample td > div {
+            margin-left: calc(50% - 43px);
+        }
+
+        @media print {
+            tr td:nth-child(2n + 1){
+                background-color: #fafaff!important;;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Phụ âm đầu</h1>
+
+    <table>
+        <tr>
+            <td class="char-cell">b</td>
+            <td class="img-cell"><img src="./phuamdau/11_b.svg" title="bốc" ></td>
+            <td class="char-cell">c</td>
+            <td class="img-cell"><img src="./phuamdau/11_c.svg" title="cung"  ></td>
+            <td class="char-cell">d</td>
+            <td class="img-cell"><img src="./phuamdau/11_d.svg" title=""  ></td>
+            <td class="char-cell">đ</td>
+            <td class="img-cell"><img src="./phuamdau/11_dd.svg" title="đao"  ></td>
+            <td class="char-cell">g</td>
+            <td class="img-cell"><img src="./phuamdau/11_g.svg" title=""  ></td>
+            <td class="char-cell">p</td>
+            <td class="img-cell"><img src="./phuamdau/11_p.svg" title=""  ></td>
+            <td class="char-cell">qu</td>
+            <td class="img-cell"><img src="./phuamdau/11_qu.svg" title=""  ></td>
+            <td class="char-cell">r</td>
+            <td class="img-cell"><img src="./phuamdau/11_r.svg" title=""  ></td>
+            <td class="char-cell">h</td>
+            <td class="img-cell"><img src="./phuamdau/11_h.svg" title=""  ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">l</td>
+            <td class="img-cell"><img src="./phuamdau/11_l.svg" title="lễ"  ></td>
+            <td class="char-cell">m</td>
+            <td class="img-cell"><img src="./phuamdau/11_m.svg" title="mộc"  ></td>
+            <td class="char-cell">n</td>
+            <td class="img-cell"><img src="./phuamdau/11_n.svg" title=""  ></td>
+            <td class="char-cell">s</td>
+            <td class="img-cell"><img src="./phuamdau/11_s.svg" title="sam"  ></td>
+            <td class="char-cell">t</td>
+            <td class="img-cell"><img src="./phuamdau/11_t.svg" title="tâm"  ></td>
+            <td class="char-cell">v</td>
+            <td class="img-cell"><img src="./phuamdau/11_v.svg" title="vương"  ></td>
+            <td class="char-cell">x</td>
+            <td class="img-cell"><img src="./phuamdau/11_x.svg" title=""  ></td>
+            <td class="char-cell">ch</td>
+            <td class="img-cell"><img src="./phuamdau/11_ch.svg" title=""  ></td>
+            <td class="char-cell">ng</td>
+            <td class="img-cell"><img src="./phuamdau/11_ng_fix.svg" title="nguyệt"  ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">tr</td>
+            <td class="img-cell"><img src="./phuamdau/11_tr.svg"  title="nguyệt" ></td>
+            <td class="char-cell">ph</td>
+            <td class="img-cell"><img src="./phuamdau/11_ph.svg" title="phiến"  ></td>
+            <td class="char-cell">th</td>
+            <td class="img-cell"><img src="./phuamdau/11_th.svg" title="thủy"  ></td>
+            <td class="char-cell">nh</td>
+            <td class="img-cell"><img src="./phuamdau/11_nh.svg"  title="nhân" ></td>
+            <td class="char-cell">kh</td>
+            <td class="img-cell"><img src="./phuamdau/11_kh_fix.svg" title="khẩu"  ></td>
+            <td class="char-cell">gi</td>
+            <td class="img-cell"><img src="./phuamdau/11_gi.svg" title=""  ></td>
+            <td class="char-cell">-</td>
+            <td class="img-cell"><img src="./phuamdau/11_-.svg" ></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h1 class="title">Dấu thanh</h1>
+
+    <table>
+        <tr>
+            <td class="char-cell">/</td>
+            <td class="img-cell"><img src="./dauthanh/11_sac.svg" ></td>
+            <td class="char-cell">\</td>
+            <td class="img-cell"><img src="./dauthanh/11_huyen.svg" ></td>
+            <td class="char-cell">?</td>
+            <td class="img-cell"><img src="./dauthanh/11_hoi.svg" ></td>
+            <td class="char-cell">~</td>
+            <td class="img-cell"><img src="./dauthanh/11_nga.svg" ></td>
+            <td class="char-cell">.</td>
+            <td class="img-cell"><img src="./dauthanh/11_nang.svg" ></td>
+        </tr>
+    </table>
+
+    <h1 class="title">Phụ âm cuối</h1>
+
+    <table>
+        <tr>
+            <td class="char-cell">c</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_c.svg" ></td>
+            <td class="char-cell">ch</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_ch.svg" ></td>
+            <td class="char-cell">p</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_p.svg" ></td>
+            <td class="char-cell">t</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_t.svg" ></td>
+            <td class="char-cell">m</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_m.svg" ></td>
+            <td class="char-cell">n</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_n.svg" ></td>
+            <td class="char-cell">ng</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_ng.svg" ></td>
+            <td class="char-cell">nh</td>
+            <td class="img-cell"><img src="./phuamcuoi/12_nh.svg" ></td>
+        </tr>
+    </table>
+
+    <h1 class="title">Nguyên âm</h1>
+
+    <table>
+        <tr>
+            <td class="char-cell">a</td>
+            <td class="img-cell"><img src="./van/11_a.svg" ></td>
+            <td class="char-cell">ă</td>
+            <td class="img-cell"><img src="./van/12_aw.svg" ></td>
+            <td class="char-cell">â</td>
+            <td class="img-cell"><img src="./van/12_aa.svg" ></td>
+            <td class="char-cell">ai</td>
+            <td class="img-cell"><img src="./van/11_ai.svg" ></td>
+            <td class="char-cell">ao</td>
+            <td class="img-cell"><img src="./van/11_ao.svg" ></td>
+            <td class="char-cell">ay</td>
+            <td class="img-cell"><img src="./van/11_ay.svg" ></td>
+            <td class="char-cell">âu</td>
+            <td class="img-cell"><img src="./van/11_aau.svg" ></td>
+            <td class="char-cell">ây</td>
+            <td class="img-cell"><img src="./van/11_aay.svg" ></td>
+            <td class="char-cell">au</td>
+            <td class="img-cell"><img src="./van/11_au.svg" ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">i</td>
+            <td class="img-cell"><img src="./van/11_i.svg" ></td>
+            <td class="char-cell">ia</td>
+            <td class="img-cell"><img src="./van/11_ia.svg" ></td>
+            <td class="char-cell">iê</td>
+            <td class="img-cell"><img src="./van/12_iee.svg" ></td>
+            <td class="char-cell">iu</td>
+            <td class="img-cell"><img src="./van/11_iu.svg" ></td>
+            <td class="char-cell">iêu</td>
+            <td class="img-cell"><img src="./van/11_ieeu.svg" ></td>
+            <td class="char-cell">e</td>
+            <td class="img-cell"><img src="./van/11_e.svg" ></td>
+            <td class="char-cell">ê</td>
+            <td class="img-cell"><img src="./van/11_ee.svg" ></td>
+            <td class="char-cell">êu</td>
+            <td class="img-cell"><img src="./van/11_eeu.svg" ></td>
+            <td class="char-cell">eo</td>
+            <td class="img-cell"><img src="./van/11_eo.svg" ></td>
+        </tr>
+    </table>
+    <table style="margin-top: 2px; width: 765px;max-width: 100%;">
+        <tr>
+            <td class="char-cell">u</td>
+            <td class="img-cell"><img src="./van/11_u.svg" ></td>
+            <td class="char-cell">ư</td>
+            <td class="img-cell"><img src="./van/11_uw.svg" ></td>
+            <td class="char-cell">ua</td>
+            <td class="img-cell"><img src="./van/11_ua.svg" ></td>
+            <td class="char-cell">uâ</td>
+            <td class="img-cell"><img src="./van/12_uaa.svg" ></td>
+            <td class="char-cell">ui</td>
+            <td class="img-cell"><img src="./van/11_ui.svg" ></td>
+            <td class="char-cell">ưi</td>
+            <td class="img-cell"><img src="./van/11_uwi.svg" ></td>
+            <td class="char-cell">ươ</td>
+            <td class="img-cell"><img src="./van/12_uwow.svg" ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">ưu</td>
+            <td class="img-cell"><img src="./van/11_uwu.svg" ></td>
+            <td class="char-cell">uơ</td>
+            <td class="img-cell"><img src="./van/11_uow.svg" ></td>
+            <td class="char-cell">uy</td>
+            <td class="img-cell"><img src="./van/11_u.svg" ></td>
+            <td class="char-cell">uôi</td>
+            <td class="img-cell"><img src="./van/11_uooi.svg" ></td>
+            <td class="char-cell">ươu</td>
+            <td class="img-cell"><img src="./van/11_uwowu.svg" ></td>
+            <td class="char-cell">uyu</td>
+            <td class="img-cell"><img src="./van/11_uyu.svg" ></td>
+            <td class="char-cell">uyê</td>
+            <td class="img-cell"><img src="./van/12_uyee.svg" ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">uây</td>
+            <td class="img-cell"><img src="./van/11_uaay.svg" ></td>
+            <td class="char-cell">ươi</td>
+            <td class="img-cell"><img src="./van/11_uwowi.svg" ></td>
+            <td class="char-cell">uô</td>
+            <td class="img-cell"><img src="./van/12_uoo.svg" ></td>
+            <td class="char-cell">ưa</td>
+            <td class="img-cell"><img src="./van/11_uwa.svg" ></td>
+            <td class="char-cell">uya</td>
+            <td class="img-cell"><img src="./van/11_uya.svg" ></td>
+            <td class="char-cell">uê</td>
+            <td class="img-cell"><img src="./van/11_uee.svg" ></td>
+        </tr>
+    </table>
+    <table style="margin-top: 2px; width: 765px;max-width: 100%;">
+        <tr>
+            <td class="char-cell">o</td>
+            <td class="img-cell"><img src="./van/11_o.svg" ></td>
+            <td class="char-cell">ô</td>
+            <td class="img-cell"><img src="./van/11_oo.svg" ></td>
+            <td class="char-cell">ơ</td>
+            <td class="img-cell"><img src="./van/11_ow_fix.svg" ></td>
+            <td class="char-cell">oa</td>
+            <td class="img-cell"><img src="./van/12_oa.svg" ></td>
+            <td class="char-cell">oe</td>
+            <td class="img-cell"><img src="./van/11_oe_fix.svg" ></td>
+            <td class="char-cell">oă</td>
+            <td class="img-cell"><img src="./van/12_oaw.svg" ></td>
+        </tr>
+        <tr>
+            <td class="char-cell">oi</td>
+            <td class="img-cell"><img src="./van/11_uwu.svg" ></td>
+            <td class="char-cell">ơi</td>
+            <td class="img-cell"><img src="./van/11_uow.svg" ></td>
+            <td class="char-cell">ôi</td>
+            <td class="img-cell"><img src="./van/11_u.svg" ></td>
+            <td class="char-cell">oai</td>
+            <td class="img-cell"><img src="./van/11_uooi.svg" ></td>
+            <td class="char-cell">oay</td>
+        </tr>
+    </table>
+
+    <div style="break-after:page"></div>
+    <h1 class="title">Ghép kí tự</h1>
+
+    <table class="sample">
+        <tr>
+            <th class="char-cell">a</th>
+            <th class="char-cell">đa</th>
+            <th class="char-cell">đá</th>
+            <th class="char-cell">đan</th>
+            <th class="char-cell">đán</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_-.svg">
+                    </div>
+                    <div class="van11"><img src="./van/11_a.svg" alt=""> </div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_dd.svg">
+                    </div>
+                    <div class="van11"> <img src="./van/11_a.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_dd.svg">
+                    </div>
+                    <div class="dauthanh"> <img src="./dauthanh/11_sac.svg" alt=""></div>
+                    <div class="van34"> <img src="./van/34_a.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_dd.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_a.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_n.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_dd.svg">
+                    </div>
+                    <div class="dauthanh"><img src="./dauthanh/11_sac.svg" alt=""></div>
+                    <div class="van38"><img src="./van/38_a.svg" alt=""></div>
+                    <div class="phuamcuoi38"><img src="./phuamcuoi/38_n.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="char-cell">quyên</th>
+            <th class="char-cell">quốc</th>
+            <th class="char-cell">cuốc</th>
+            <th class="char-cell">xong</th>
+            <th class="char-cell">xoong</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_qu.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_iee.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_n.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_qu.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_oo.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_c.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_c.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_uoo.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_c.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_x.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_o.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_nh.svg" alt=""></div>
+                </div>
+            </td>
+            <td>
+                <div class="char-container">
+                    <div class="phuamdau ">
+                        <img src="./phuamdau/11_x.svg">
+                    </div>
+                    <div class="van12"> <img src="./van/12_o.svg" alt=""></div>
+                    <div class="phuamcuoi12"> <img src="./phuamcuoi/12_ng.svg" alt=""></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h1 class="title">Chú ý</h1>
+    <div class="note">
+        <ul>
+            <li>Vần bắt đầu bằng 'y' thì chuyển thành 'i'</li>
+            <li>
+                Những chữ có phụ âm 'qu' thì 'qu' được coi là phụ âm, phần còn lại là vần.
+                <ul>
+                    <li style="font-weight: bold;">quyên = qu + iê + n</li>
+                </ul>
+            </li>
+            <li>
+                Những chữ kết thúc bằng phụ âm cuối (c, ch, p, t) mà có dấu sắc thì ko cần viết dấu thanh
+                <ul>
+                    <li style="font-weight: bold;">quốc = qu + ô + c</li>
+                </ul>
+            </li>
+            <li> Thay đổi vần
+                <ul style="font-weight: bold;">
+                    <li>ong	→	onh (xong → xonh)</li>
+                    <li>oong →	ong (xoong → xong)</li>
+                    <li>oeo	→	eo (ngoèo → nghèo)</li>
+                    <li>oao	→	ao (ngoào → ngào)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div style="break-after:page"></div>
+</body>
+</html>
