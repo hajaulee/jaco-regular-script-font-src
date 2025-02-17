@@ -148,7 +148,7 @@ for i, word in enumerate(words):
     char_code = START_UNICODE + i
     
     # chars = word.split("_")
-    # ready = chars[0] in ["dd"] and chars[1] in ["uooi", "ua"] and chars[3] in ["j", "", "f"]
+    # ready = chars[0] in ["dd"] and chars[1] in ["eo", "a"] and chars[3] in ["j", ""] and chars[2] in ["", "ng"]
     # if not ready:
     #     continue
     # demo_words.append(word + " : "+ f"&#{char_code};")
@@ -184,8 +184,8 @@ with open(os.path.join(genrated_dir, "code_map.json"), "w") as file:
     
 print("Generated svg files.")
 print("Copy to dest...")
-shutil.rmtree(r"C:\PetProjects\Void\Houf-Regular-Script\generated")
-shutil.copytree(genrated_dir, r"C:\PetProjects\Void\Houf-Regular-Script\generated")
+shutil.rmtree(r"..\..\..\Void\Houf-Regular-Script\generated")
+shutil.copytree(genrated_dir, r"..\..\..\Void\Houf-Regular-Script\generated")
 
 print("demo words:")
 for line in sorted(demo_words):
